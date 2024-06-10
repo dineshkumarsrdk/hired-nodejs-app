@@ -1,0 +1,25 @@
+<div id="job-list" class="d-flex justify-content-evenly align-items-center flex-wrap text-white">
+    <% jobs.forEach(job => { %>
+        <div class="card border-white m-3 bg-transparent align-self-stretch" style="max-width: 18rem; min-width: 18rem;">
+            <div class="card-header d-flex flex-column justify-content-center align-items-start">
+                <h5 class="fw-bold text-warning"><%= job.companyName %></h5>
+                <div>
+                    <span><%= job.category %></span>
+                    <span class="text-info"><%= job.designation %></span>
+                </div>
+            </div>
+            <div class="card-body d-flex flex-column justify-content-center align-items-start">
+                <p class="fw-bold"><i class="fa-solid fa-location-dot"></i> <%= job.location %></p>
+                <p class="fw-bold"><i class="fa-solid fa-indian-rupee-sign"></i> <%= job.salary %></p>
+            </div>
+            <div class="skills">
+                <% job.skills.forEach(skill => { %>
+                    <button class="btn btn-sm btn-outline-info mx-1 my-1"><%= skill %></button>
+                <% }) %>
+            </div>
+            <a href="/jobs/<%= job.id %>" class="btn btn-sm btn-outline-success my-2 mx-3">
+                View details
+            </a>
+        </div>
+    <% }) %>
+</div>

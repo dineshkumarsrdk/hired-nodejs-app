@@ -1,0 +1,14 @@
+<h3 class="text-pink">Register as a recruiter to post and edit jobs</h1>
+<% if(!success) { %>
+    <p class="alert alert-danger">You are already registered as a recruiter</p>
+<% } %>
+<form action="/register" method="post" class="form text-white">
+    <label for="name" class="form-label">Name</label>
+    <input required type="text" id="name" name="name" class="form-control">
+    <label for="email" class="form-label">Email</label>
+    <input required type="email" id="email" name="email" class="form-control">
+    <label for="password" class="form-label">Password</label>
+    <input required type="password" id="password" name="password" class="form-control">
+    <button type="submit" class="btn btn-primary mt-2">Register</button>
+    <p>Already registered? <a href="/login">Login</a></p>
+</form>
